@@ -1,0 +1,15 @@
+﻿12/05/2020 00:03:44
+* Stress Analysis
+   * On headphone/inner headband
+   * Simulated force-
+   * 2 trials to simulate normal usage 
+* Results
+   * Trial 1
+      * Maximum VM stress of 7.7 mega pascals
+   * Trial 2
+      * Maximum VM stress of 3.85  mega pascals
+
+
+
+
+12/05/2020 00:05:21
