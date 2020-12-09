@@ -16,7 +16,7 @@ The current implementation of the system performs an essential functionality and
 
 Every action that a user has to perform in order to receive a set of notes that have corresponding video clips embedded next to those notes is explained below. 
 
-### Directions for Use: Reads everything carefully and follow step by step  
+### Directions for Use: Read everything carefully and follow step by step  
 
 
 1. Clone this repo to your local machine 
@@ -32,19 +32,19 @@ Every action that a user has to perform in order to receive a set of notes that 
 
 6. Ensure that line 1 in the file titled "convert.py" contains the correct file name corresponding to the .txt version of the document in which you took your notes.
 
-7. Navigate to the Terminal. `cd` into your "Zoom_Notetaking" directory. Run `python convert.py`
+7. Navigate to the Terminal. `cd` into your "Zoom_Notetaking" directory. Run `python convert.py` 
 
-8. You will notice that a file called "notes.html" has been created. Open this file on your local machine in a text editor of your choice. This file will serve as the basis for your merged notes and video(s) documents.
+8. You will notice that a file called "notes.html" has been created. Open this file on your local machine in a text editor of your choice and notice that your notes have been copied into this html file. This file will serve as the basis for your final merged notes and video(s) document.
 
-9. Open the file titled ClipVid.py in a text editor on your local machine. Ensure that the name of the .mp4 file contained on line 2 matches the .mp4 file that you want a clip of in your final document 
+9. Open the file titled ClipVid.py in a text editor on your local machine. Ensure that the name of the .mp4 file contained in the function on line 2 matches the .mp4 file that you want a clip of in your final document 
 
-10. Specify how you want to clip your lecture recording using the 2nd and 3rd arguments to the function contained on line 2 titled "ffmpeg_extract_subclip". The 2nd argument represents the number of seconds we want to chop off from the front of the .mp4 video and the 3rd argument specifies the point in the video at which we want our clip to end (e.g. if 300 is specified for the 3rd argument then the video clip we embed into our final document will be clipped such that it doesn't contain any portion of the original video that exists after the 5 minute mark has been reached in the original video). See the timestamps in your .txt file containing your notes for the information on what exactly to put in the 2nd and 3rd arguments to the function contained on line 2 titled "ffmpeg_extract_subclip". (Note: Remember that the first timestamp is when you started watching the zoom video and the second timestamp is when you started taking notes, so subtract these two times from each other to get how many seconds you want to delay the start of your lecture, which is the 2nd argument. Remember that the third timestamp corresponds to when you stopped taking notes, so see how much time has passed between the first timestamp and the third timestamp to see how far into the video you want to go before clipping, which is the 3rd argument)
+10. Specify how you want to clip your lecture recording using the 2nd and 3rd arguments to the function  named "ffmpeg_extract_subclip" that is contained on line 2. The 2nd argument represents the number of seconds we want to chop off from the front of the .mp4 video and the 3rd argument specifies the point in the video at which we want our clip to end (e.g. if 300 is specified for the 3rd argument then the video clip we embed into our final document will be clipped such that it doesn't contain any portion of the original video that exists after the 5 minute mark has been reached in the original video). See the timestamps in your .txt file containing your notes for the information on what exactly to put in the 2nd and 3rd arguments to this function. (Note: Remember that the first timestamp from your .txt file is when you started watching the zoom video and the second timestamp is when you started taking notes on this video, so subtract the first time stamp from the second time stamp to obtain how many seconds you want to delay the start of your lecture, which is the 2nd argument. Remember that the third timestamp corresponds to when you stopped taking notes, so see how much time has passed between the first timestamp and the third timestamp to see how far into the video you want to go before clipping, which is the 3rd argument)
 
 11. Navigate to the Terminal. `cd` into your "Zoom_Notetaking" directory. Run `python ClipVid.py`
 
 12. You should notice an output file titled "test.mp4" in your "Zoom_Notetaking" directory.
 
-13. Navigate to the notes.html file that has been opened on your local machine. Right below the code you see, insert the following code and save your file:
+13. Navigate to the notes.html file that has been opened on your local machine (if it's not open yet then open it). Right below the code you see, insert the following code and save your file:
 
 `<video width="320" height="240" controls> `<br />
 ` <source src="test.mp4" type="video/mp4"> ` <br /> 
@@ -55,6 +55,6 @@ Every action that a user has to perform in order to receive a set of notes that 
 
 ### Additional Note Regarding Directions 
 
-It is understandable that the directions for using this system as of now are long-winded and complex. It is my goal in future iterations of this system to reduce the quantity and complexity of steps that the user is required to take if he/she wants to use this system. Please feel free to contact me at anytime if you have questions regarding the use or functionality of this sytem. 
+The directions for using this system as of now are definitely somewhat complicated in that they require the user to carefully follow a step by step process in order to acheive the desired result, rather than being able to seamlessly acheive the desired result within a few steps. It is my goal in future iterations of this system to reduce the quantity and complexity of the steps that the user is required to take if he/she wants to use this system. Please feel free to contact me at anytime if you have questions regarding the use or functionality of this system. 
 
 Email: hadishiraz2021@u.northwestern.edu
