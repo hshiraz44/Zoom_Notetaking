@@ -16,7 +16,7 @@ The current implementation of the system performs an essential functionality and
 
 Every action that a user has to perform in order to receive a set of notes that have corresponding video clips embedded next to those notes is explained below. 
 
-### Directions for Use 
+### Directions for Use: Reads everything carefully and follow step by step  
 
 
 1. Clone this repo to your local machine 
@@ -26,12 +26,33 @@ Every action that a user has to perform in order to receive a set of notes that 
 3. The folder titled "Google Doc" contains code that you should insert into the Script Editor of a Google Docs file that is stored in your Google Drive. Title this Google Doc "Zoom Note-Taking" for now, though this title can be changed later via the convert.py file
  
 
-4. Run all of the functions that are contained in the Script Editor in the Google Doc titled "Zoom Note-Taking". You will notice a sidebar appear that contains a button titled "Start/Stop Taking Notes". Press this button once when you start watching the recorded lecture, once you start taking notes on the recorded lecture, and once you stop taking notes on the recorded lecture. Remember that the three different timestamps 
+4. Run all of the functions that are contained in the Script Editor in the Google Doc titled "Zoom Note-Taking". You will notice a sidebar appear that contains a button titled "Start/Stop Taking Notes". Press this button once when you start watching the recorded lecture, once you start taking notes on the recorded lecture, and once you stop taking notes on the recorded lecture. Remember what the three different timestamps correspond to. 
 
 5. Download your Google Docs file as a .txt file and store it in your "Zoom_Notetaking" directory contained on your local machine. 
 
-6. Navigate to the Terminal. `cd`Z into your "Zoom_Notetaking" directory. 
+6. Ensure that line 1 in the file titled "convert.py" contains the correct file name corresponding to the .txt version of the document in which you took your notes.
 
+7. Navigate to the Terminal. `cd` into your "Zoom_Notetaking" directory. Run `python convert.py`
+
+8. You will notice that a file called "notes.html" has been created. Open this file on your local machine in a text editor of your choice. This file will serve as the basis for your merged notes and video(s) documents.
+
+9. Open the file titled ClipVid.py in a text editor on your local machine. Ensure that the name of the .mp4 file contained on line 2 matches the .mp4 file that you want a clip of in your final document 
+
+10. Specify how you want to clip your lecture recording using the 2nd and 3rd arguments to the function contained on line 2 titled "ffmpeg_extract_subclip". The 2nd argument represents the number of seconds we want to chop off from the front of the .mp4 video and the 3rd argument specifies the point in the video at which we want our clip to end (e.g. if 300 is specified for the 3rd argument then the video clip we embed into our final document will be clipped such that it doesn't contain any portion of the original video that exists after the 5 minute mark has been reached in the original video). See the timestamps in your .txt file containing your notes for the information on what exactly to put in the 2nd and 3rd arguments to the function contained on line 2 titled "ffmpeg_extract_subclip". (Note: Remember that the first timestamp is when you started watching the zoom video and the second timestamp is when you started taking notes, so subtract these two times from each other to get how many seconds you want to delay the start of your lecture, which is the 2nd argument. Remember that the third timestamp corresponds to when you stopped taking notes, so see how much time has passed between the first timestamp and the third timestamp to see how far into the video you want to go before clipping, which is the 3rd argument)
+
+11. Navigate to the Terminal. `cd` into your "Zoom_Notetaking" directory. Run `python ClipVid.py`
+
+12. You should notice an output file titled "test.mp4" in your "Zoom_Notetaking" directory.
+
+13. Navigate to the notes.html file that has been opened on your local machine. Right below the code you see, insert the following code and save your file:
+
+`
+<video width="320" height="240" controls>
+  <source src="test.mp4" type="video/mp4">
+</video>
+`
+
+14. Open up "notes. html" in a browser and you should see your output document with notes and a corresponding clip of a .mp4 video. Hope you enjoy using this system!
 
 ### Additional Note Regarding Directions 
 
