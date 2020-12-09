@@ -46,9 +46,9 @@ Every action that a user has to perform in order to receive a set of notes that 
 
 13. Navigate to the notes.html file that has been opened on your local machine. Right below the code you see, insert the following code and save your file:
 
-<br `<video width="320" height="240" controls> ` />
- <br` <source src="test.mp4" type="video/mp4"> ` />
-`\n</video>`
+`<video width="320" height="240" controls> `<br />
+` <source src="test.mp4" type="video/mp4"> ` <br /> 
+`</video>` <br />
 
 
 14. Open up "notes. html" in a browser and you should see your output document with notes and a corresponding clip of a .mp4 video. Hope you enjoy using this system!
