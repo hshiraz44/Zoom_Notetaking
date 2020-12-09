@@ -46,8 +46,8 @@ Every action that a user has to perform in order to receive a set of notes that 
 
 13. Navigate to the notes.html file that has been opened on your local machine. Right below the code you see, insert the following code and save your file:
 
-`\n<video width="320" height="240" controls>`
- `\n<source src="test.mp4" type="video/mp4">`
+`<br <video width="320" height="240" controls> />`
+ `<br <source src="test.mp4" type="video/mp4"> />`
 `\n</video>`
 
 
